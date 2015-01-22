@@ -1,0 +1,147 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'https://github.com/Lokaltog/vim-powerline'
+Plugin 'taglist.vim'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+syntax enable
+
+syntax on
+
+set termencoding=utf-8
+
+set fileencodings=utf-8,ucs-bom,cp936,gbk
+
+set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936,gbk
+
+set fileencoding=utf-8
+
+set langmenu=zh_CN.UTF-8
+
+set helplang=cn
+
+set encoding=utf-8
+
+"vim powerline插件
+set laststatus=2
+
+set t_Co=256
+
+let g:Powerline_colorscheme = 'solarized256'
+
+let g:Powerline_stl_path_style = 'full'
+
+"YCM
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+let g:ycm_global_ycm_extra_conf = '/root/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+
+set completeopt=longest,menu
+
+let g:ycm_collect_identifiers_from_tags_files=1
+
+let g:ycm_min_num_of_chars_for_completion=3
+
+let g:ycm_cache_omnifunc=0
+
+let g:ycm_seed_identifiers_with_syntax = 1
+
+let g:ycm_enable_diagnostic_signs = 1
+
+let g:ycm_max_diagnostics_to_display = 0	"close the syntax check function
+
+nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+
+let g:ycm_complete_in_comments = 1
+
+let g:ycm_complete_in_strings = 0
+
+nnoremap <F2> :g/^\s*$/d<CR> 
+
+nnoremap <C-F2> :vert diffsplit 
+
+map <F3> :tabnew .<CR>  
+
+set autoread
+
+"set completeopt=preview,menu 
+
+set confirm
+
+set tabstop=4
+
+set softtabstop=4
+
+set shiftwidth=4
+
+set ts=4
+
+set noexpandtab
+
+set smarttab
+
+set number
+
+set history=1000
+
+set enc=gbk
+
+set showcmd
+
+"filetype on
+
+"filetype plugin on
+
+"filetype indent on
+
+set viminfo+=!
+
+set mouse=v
+
+set selection=exclusive
+
+set selectmode=mouse,key
+
+set report=0
+
+set fillchars=vert:\ ,stl:\ ,stlnc:\
+
+set showmatch
+
+set matchtime=1
+
+set scrolloff=3
+
+set completeopt=longest,menu
+
+set backspace=indent,eol,start
+
+"查找高亮
+set hls
+
+nmap <silent> <F8> :Tlist<cr>
+set tags=tags
+let Tlist_Sort_Type = "name"    " 按照名称排序 
+let Tlist_Use_Right_Window = 1  " 在右侧显示窗口 
+let Tlist_Compart_Format = 1    " 压缩方式 
+let Tlist_Exist_OnlyWindow = 1  " 如果只有一个buffer，kill窗口也kill掉buffer 
+let Tlist_File_Fold_Auto_Close = 0  " 不要关闭其他文件的tags 
+let Tlist_Enable_Fold_Column = 0    " 不要显示折叠树 
+let Tlist_Show_One_File=1	"不同时显示多个文件的tag，只显示当前文件的
+let Tlist_Ctags_Cmd = '/usr/bin/ctags'
+let Tlist_Exit_OnlyWindow = 1 "如果taglist窗口是最后一个窗口，则退出vim
+
